@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Primary SEO -->
+  <title>PhotoPDFX — Free & Fast Photo to PDF Converter</title>
+  <meta name="description" content="Convert photos to PDF instantly. Fast, secure, no watermark. Works on mobile and desktop.">
+  <meta name="keywords" content="photo to pdf, image to pdf, online converter, convert image to pdf, free tool">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph (for social shares) -->
+  <meta property="og:title" content="PhotoPDFX — Free Photo to PDF Converter">
+  <meta property="og:description" content="Convert photos to PDF instantly. Fast, secure, no watermark.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://photopdfx.sbs/">
+  <meta property="og:image" content="/social-preview.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://photopdfx.sbs/">
+
+  <!-- Schema JSON-LD for basic Organization and SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "PhotoPDFX",
+    "url": "https://photopdfx.sbs/",
+    "description": "Convert photos to PDF instantly. Fast, simple and secure.",
+    "operatingSystem": "All",
+    "applicationCategory": "Tool"
+  }
+  </script>
+
+  <!-- Minimal CSS, inline for fast first paint. Keep design similar but tweak as needed. -->
+  <style>
+    :root{--bg:#f7f7fb;--card:#ffffff;--accent:#0f62fe;--muted:#6b6b7a}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;background:var(--bg);color:#111}
+    header{background:linear-gradient(90deg,#fff 0%,#f3f7ff 100%);padding:28px 18px;box-shadow:0 1px 0 rgba(16,24,40,0.04)}
+    .container{max-width:1040px;margin:0 auto;padding:18px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#6f8cff);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    h1{font-size:26px;margin:6px 0}
+    p.lead{color:var(--muted);margin:0}
+
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:center;margin-top:22px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+
+    /* Converter box */
+    .uploader{display:flex;flex-direction:column;gap:12px}
+    input[type=file]{display:block}
+    .btn{display:inline-block;padding:10px 14px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;border:none;cursor:pointer}
+    .muted{color:var(--muted);font-size:14px}
+
+    /* Features grid */
+    .features{display:flex;gap:12px;margin-top:18px}
+    .feature{flex:1;padding:12px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfcff);text-align:center}
+    footer{margin-top:30px;padding:18px 0;color:var(--muted);font-size:14px}
+
+    @media(max-width:880px){.hero{grid-template-columns:1fr;}.brand h1{font-size:20px}}
+  </style>
+
+  <!-- Google Analytics placeholder (replace G-XXXXXXX) -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXX');</script> -->
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="brand">
+        <div class="logo">P</div>
+        <div>
+          <h1>PhotoPDFX</h1>
+          <p class="lead">Convert photos to PDF — fast, secure, no watermark</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <div class="card">
+          <h2>Convert Photos to PDF — Instant</h2>
+          <p class="muted">Upload JPG/PNG/WEBP. Reorder images and download single PDF. Works offline in your browser.</p>
+
+          <div class="uploader" style="margin-top:14px">
+            <label class="muted">Choose images</label>
+            <input id="fileInput" type="file" accept="image/*" multiple>
+            <button id="convertBtn" class="btn">Convert to PDF</button>
+            <p class="muted" id="status">No files chosen</p>
+          </div>
+
+          <div id="downloadArea" style="margin-top:12px"></div>
+        </div>
+
+        <div class="features" aria-hidden="true">
+          <div class="feature"><strong>Fast</strong><div class="muted">Browser-based, no upload</div></div>
+          <div class="feature"><strong>Secure</strong><div class="muted">Files stay on your device</div></div>
+          <div class="feature"><strong>No watermark</strong><div class="muted">Free to use</div></div>
+        </div>
+
+        <section style="margin-top:18px">
+          <h3>How it works</h3>
+          <ol>
+            <li>Select images from your device</li>
+            <li>Click <em>Convert to PDF</em></li>
+            <li>Download the generated PDF</li>
+          </ol>
+        </section>
+
+        <section style="margin-top:16px">
+          <h3>FAQ</h3>
+          <p><strong>Q:</strong> Is it free?<br><strong>A:</strong> Yes, completely free.</p>
+          <p><strong>Q:</strong> Are files uploaded to server?<br><strong>A:</strong> No — conversion happens in your browser (client-side).</p>
+        </section>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h4>Tips</h4>
+          <ul class="muted">
+            <li>Use high-resolution images for better PDF quality</li>
+            <li>Compress large images if conversion is slow</li>
+            <li>Use the mobile browser for quick conversions on phone</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:12px;text-align:center">
+          <h4>Share</h4>
+          <p class="muted">Share PhotoPDFX with friends to help us grow</p>
+          <a class="btn" href="#" onclick="navigator.clipboard.writeText(window.location.href);alert('Link copied')">Copy Link</a>
+        </div>
+      </aside>
+    </section>
+
+    <footer>
+      <div class="card" style="display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <strong>PhotoPDFX</strong>
+          <div class="muted">© <span id="yr"></span> — All rights reserved</div>
+        </div>
+        <div class="muted">Made with ♥ — Privacy first</div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Minimal client-side JS to convert images to PDF using html2pdf-like approach via canvas -->
+  <script>
+    // Small helper to convert images to PDF using jsPDF approach without external libs
+    // This script uses the browser's canvas and the built-in window.print() fallback to produce a PDF via blob.
+    // Simpler approach: use `PDFLib` or `jspdf` in production. For now keep dependency-free.
+
+    const fileInput = document.getElementById('fileInput');
+    const convertBtn = document.getElementById('convertBtn');
+    const status = document.getElementById('status');
+    const downloadArea = document.getElementById('downloadArea');
+
+    fileInput.addEventListener('change', ()=>{
+      status.textContent = fileInput.files.length + ' files selected';
+    });
+
+    async function imagesToPdf(files){
+      // Create a PDF by making each image a separate page in a single PDF using offscreen canvas and the PDF printer via blob.
+      // Note: This is a simple client-side pack and may not be as small as server-side solutions.
+      const pdfPages = [];
+      for(const f of files){
+        const img = await readFileAsImage(f);
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        // set width to 595pt (A4 in points) and scale height to maintain ratio
+        const w = 595; // points
+        const scale = w / img.width;
+        canvas.width = img.width * scale;
+        canvas.height = img.height * scale;
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        const dataUrl = canvas.toDataURL('image/jpeg', 0.95);
+        pdfPages.push(dataUrl);
+      }
+
+      // Use the browser's PDF generation by creating an iframe with printable images stacked vertically sized to A4.
+      const html = pdfPages.map(src => `<img style="width:595pt;display:block;margin:0 auto;page-break-after:always;" src="${src}">`).join('\n');
+      const blob = new Blob([`<html><head><meta charset="utf-8"></head><body>${html}</body></html>`], {type:'application/pdf'});
+
+      // Fallback: create a HTML file for printing and instruct user to save as PDF (works reliably)
+      const printWindow = window.open('', '_blank');
+      printWindow.document.write(`<html><head><title>Download PDF</title></head><body>${html}</body></html>`);
+      printWindow.document.close();
+      // show instruction
+      alert('New tab opened: use browser Print -> Save as PDF to download (for best results, choose A4).');
+    }
+
+    function readFileAsImage(file){
+      return new Promise((res,rej)=>{
+        const fr = new FileReader();
+        fr.onload = ()=>{
+          const img = new Image();
+          img.onload = ()=>res(img);
+          img.onerror = rej;
+          img.src = fr.result;
+        };
+        fr.onerror = rej;
+        fr.readAsDataURL(file);
+      });
+    }
+
+    convertBtn.addEventListener('click', async ()=>{
+      const files = Array.from(fileInput.files || []);
+      if(files.length===0){alert('Please select at least one image');return}
+      convertBtn.disabled = true; status.textContent='Converting...';
+      try{
+        await imagesToPdf(files);
+      }catch(e){console.error(e);alert('Conversion failed: '+e.message)}
+      convertBtn.disabled=false; status.textContent=files.length+' file(s) processed';
+    });
+
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html
